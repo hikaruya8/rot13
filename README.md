@@ -25,4 +25,4 @@ python3 any_rot.py
 ※任意で実現可能にするため，文字列を入力する前にROTの数値を入力してください
 
 ## テストコード
-python3 test_rot13.py
+pytest test_rot13.py
