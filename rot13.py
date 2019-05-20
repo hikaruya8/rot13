@@ -24,7 +24,7 @@ def __rot13(c):
         # 13 文字分ずらす
         return chr((ord(c) - ord('a') + 13) % 26 + ord('a'))
 
-    # その他の文字はそのまま出力
+    # その他の記号，数字などはそのまま出力
     return c
 
 
@@ -34,13 +34,22 @@ def rot13(input_string):
     # 文字列に直す
     return ''.join(g)
 
+def read_json(output_string):
+    # JSONファイルの読み込み
+    try:
+        with open('1_schema.json', 'r') as f:
+            data = json.load(f)
+            data['properties']['answer']['title'] = output_string
+            return data
+
+    except json.JSONDecodeError as e:
+        print('JSONDecodeError: ', e)
 
 def main():
     input_string = str(input()) #入力文字列
     judge_chr(input_string)
     output_string = rot13(input_string) #出力文字列
-    print('"output":{}'.format(json.dumps(output_string)))
-    sys.exit()
+    print(read_json(output_string))
 
 
 if __name__ == '__main__':
