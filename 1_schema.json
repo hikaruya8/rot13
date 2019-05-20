@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "github",
+    "twitter",
+    "answer",
+    "homepage"
+  ],
+  "properties": {
+    "github": {
+      "type": "string",
+      "title": "https://github.com/hikaruya8",
+      "examples": [
+        "motemen"
+      ]
+    },
+    "twitter": {
+      "type": "string",
+      "title": "https://twitter.com/hikaruya8",
+      "examples": [
+        "motemen"
+      ]
+    },
+    "answer": {
+      "type": "string",
+      "title": "問題の解答"
+    },
+    "homepage": {
+      "type": "string",
+      "title": "いつも続かないブログ",
+      "description": "https://hikaruya.hatenablog.com/",
+      "examples": [
+        "https://motemen.github.io/"
+      ]
+    }
+  }
+}
