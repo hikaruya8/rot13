@@ -49,7 +49,7 @@ def main():
     input_string = str(input()) #入力文字列
     judge_chr(input_string)
     output_string = rot13(input_string) #出力文字列
-    print(read_json(output_string))
+    print("{}".format(json.dumps(read_json(output_string),indent=2, ensure_ascii=False))) #最終結果JSON出力
 
 
 if __name__ == '__main__':
