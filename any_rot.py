@@ -46,9 +46,13 @@ def read_json(output_string):
 def main():
     print('任意のROTで計算します．半角数字で26以下の数字を入力してください')
     global input_num
-    input_num = int(input())
-    if input_num > 26:
-        print('半角数字で26以下の数字を入力してください')
+    try:
+        input_num = int(input())
+        if input_num > 26:
+            print('26以下の数字を入力してください')
+            sys.exit()
+    except ValueError:
+        print ('26以下の数字を入力してください')
         sys.exit()
 
     print('文字列を入力してください')
