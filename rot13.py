@@ -2,18 +2,6 @@ import json
 import sys
 import curses.ascii
 
-def __rot13(c):
-    if 'A' <= c and c <= 'Z':
-        # 13 文字分ずらす
-        return chr((ord(c) - ord('A') + 13) % 26 + ord('A'))
-
-    if 'a' <= c and c <= 'z':
-        # 13 文字分ずらす
-        return chr((ord(c) - ord('a') + 13) % 26 + ord('a'))
-
-    # その他の文字はそのまま出力
-    return c
-
 def judge_chr(input_string):
     for c in input_string:
         #入力文字がすべて印字可能な ASCII で構成されるか判定
@@ -25,6 +13,19 @@ def judge_chr(input_string):
     if not input_string:
         print('空でない文字列を入力してください')
         sys.exit()
+
+
+def __rot13(c):
+    if 'A' <= c and c <= 'Z':
+        # 13 文字分ずらす
+        return chr((ord(c) - ord('A') + 13) % 26 + ord('A'))
+
+    if 'a' <= c and c <= 'z':
+        # 13 文字分ずらす
+        return chr((ord(c) - ord('a') + 13) % 26 + ord('a'))
+
+    # その他の文字はそのまま出力
+    return c
 
 
 def rot13(input_string):
